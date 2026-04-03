@@ -4,7 +4,7 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-  "dev": "NODE_ENV=development tsx watch server/_core/index.ts",
+  "dev": "concurrently \"cd client && pnpm run dev\" \"tsx watch server/_core/index.ts\"",
   "build": "cd client && pnpm run build",
   "start": "NODE_ENV=production node dist/index.js",
   "check": "tsc --noEmit",

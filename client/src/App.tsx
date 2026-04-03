@@ -4,8 +4,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+
 import Home from "./pages/Home";
-import GameRoom from "./Pages/GameRoom";   // новый файл, который мы создадим
+import GameRoom from "./pages/GameRoom";     // ← правильный импорт
+import NotFound from "./pages/NotFound";    // ← добавили импорт
 
 function App() {
   return (

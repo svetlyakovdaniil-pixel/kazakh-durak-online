@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useLocation } from 'wouter';
-import { useSocket } from '@/hooks/useSocket';
-import { Button } from '@/components/ui/button';
+import { useSocket } from '../../hooks/useSocket';
+import { Button } from '../../components/ui/button';
 import { Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -24,14 +24,18 @@ export default function GameRoom() {
         setLocation("/");
       }
     });
-  }, [roomId]);
+  }, [roomId, joined, socket, setLocation]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1628] to-[#0f2035]">
       <div className="text-center">
         <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-amber-400" />
         <p className="text-amber-200">Загрузка комнаты {roomId}...</p>
-        <Button variant="outline" className="mt-6" onClick={() => setLocation('/')}>
+        <Button 
+          variant="outline" 
+          className="mt-6"
+          onClick={() => setLocation('/')}
+        >
           Вернуться в лобби
         </Button>
       </div>

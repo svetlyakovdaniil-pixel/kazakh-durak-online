@@ -1,6 +1,10 @@
-import { cn } from "@/lib/utils";
 import { AlertTriangle, RotateCcw } from "lucide-react";
 import { Component, ReactNode } from "react";
+
+// Простая функция cn вместо импорта из utils
+function cn(...inputs: (string | undefined | null | boolean)[]) {
+  return inputs.filter(Boolean).join(" ");
+}
 
 interface Props {
   children: ReactNode;
@@ -30,12 +34,11 @@ class ErrorBoundary extends Component<Props, State> {
               size={48}
               className="text-destructive mb-6 flex-shrink-0"
             />
-
             <h2 className="text-xl mb-4">An unexpected error occurred.</h2>
-
+            
             <div className="p-4 w-full rounded bg-muted overflow-auto mb-6">
               <pre className="text-sm text-muted-foreground whitespace-break-spaces">
-                {this.state.error?.stack}
+                {this.state.error?.stack || this.state.error?.message}
               </pre>
             </div>
 

@@ -125,16 +125,4 @@ function LandingPage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white shadow-lg shadow-amber-900/40 text-lg px-8"
-              >
-                <a href={getLoginUrl()}>
-                  Войти и играть
-                </a>
-              </Button>
-            </div>
-            <div className="flex justify-center items-center">
-              <div className="relative">
-                {faceCards.map((url, i) => (
-                  <div
-                    key={i}
-                    className="absolute rounded-xl overflow-hidden shadow-2xl border-2 border-amber-700/40 w-
+                className="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover

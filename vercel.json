@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "buildCommand": "cd client && pnpm run build",
+  "outputDirectory": "client/dist",
+  "installCommand": "cd client && pnpm install",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

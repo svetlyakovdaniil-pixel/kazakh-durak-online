@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useLocation } from 'wouter';
-import { useSocket } from '../../hooks/useSocket';
+import { useSocket } from '../hooks/useSocket';
 import { Button } from '../../components/ui/button';
 import { Loader2 } from 'lucide-react';
 import { toast } from 'sonner';

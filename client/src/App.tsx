@@ -5,7 +5,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-import GameRoom from "./pages/GameRoom";   // новый файл, который мы создадим
+import GameRoom from "./Pages/GameRoom";   // новый файл, который мы создадим
 
 function App() {
   return (

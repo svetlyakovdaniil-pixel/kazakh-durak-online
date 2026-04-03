@@ -1,5 +1,5 @@
 import { useAuth } from "../_core/hooks/useAuth";
-import { getLoginUrl } from "../../const";
+import { getLoginUrl } from "../const";
 import { Button } from "../../components/ui/button";
 import { Badge } from "../../components/ui/badge";
 import { useSocket } from "../../hooks/useSocket";
@@ -51,7 +51,6 @@ export default function Home() {
     return <LandingPage />;
   }
 
-  // In game
   if (gameState && (gameState.gamePhase === 'playing' || gameState.gamePhase === 'finished')) {
     return (
       <GameTable
@@ -71,7 +70,6 @@ export default function Home() {
     );
   }
 
-  // In waiting room
   if (currentRoom) {
     return (
       <WaitingRoom
@@ -85,7 +83,6 @@ export default function Home() {
     );
   }
 
-  // Lobby
   return (
     <Lobby
       rooms={rooms}
@@ -140,21 +137,4 @@ function LandingPage() {
                 {faceCards.map((url, i) => (
                   <div
                     key={i}
-                    className="absolute rounded-xl overflow-hidden shadow-2xl border-2 border-amber-700/40 w-32 h-48"
-                    style={{
-                      transform: `rotate(${(i - 2) * 12}deg) translateX(${(i - 2) * 40}px)`,
-                      zIndex: i,
-                    }}
-                  >
-                    <img src={url} alt="" className="w-full h-full object-cover" />
-                  </div>
-                ))}
-                <div className="w-80 h-72" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+                    className="absolute rounded-xl overflow-hidden shadow-2xl border-2 border-amber-700/40 w-

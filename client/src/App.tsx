@@ -1,29 +1,29 @@
-// client/src/App.tsx
-import { Toaster } from "./components/ui/sonner";
-import { TooltipProvider } from "./components/ui/tooltip";
-import { Route, Switch } from "wouter";
-import ErrorBoundary from "./components/ErrorBoundary";
-import { ThemeProvider } from "./contexts/ThemeContext";
-
-import Home from "./pages/Home";
-import GameRoom from "./pages/GameRoom";
-import NotFound from "./pages/NotFound";
+import React from 'react';
 
 function App() {
   return (
-    <ErrorBoundary>
-      <ThemeProvider defaultTheme="dark">
-        <TooltipProvider>
-          <Toaster />
-          <Switch>
-            <Route path="/" component={Home} />
-            <Route path="/room/:roomId" component={GameRoom} />
-            <Route path="/404" component={NotFound} />
-            <Route component={NotFound} />
-          </Switch>
-        </TooltipProvider>
-      </ThemeProvider>
-    </ErrorBoundary>
+    <div style={{
+      minHeight: '100vh',
+      backgroundColor: '#0a1628',
+      color: 'white',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontFamily: 'system-ui'
+    }}>
+      <div style={{ textAlign: 'center' }}>
+        <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>
+          Казахский Дурак Онлайн
+        </h1>
+        <p style={{ fontSize: '1.2rem', opacity: 0.8 }}>
+          Сайт загружен успешно ✅<br />
+          (минимальная версия)
+        </p>
+        <p style={{ marginTop: '2rem', fontSize: '0.9rem', opacity: 0.6 }}>
+          Commit: {Date.now()}
+        </p>
+      </div>
+    </div>
   );
 }
 

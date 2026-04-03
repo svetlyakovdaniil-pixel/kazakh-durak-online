@@ -1,4 +1,4 @@
-import { useAuth } from "../../_core/hooks/useAuth";
+import { useAuth } from "../_core/hooks/useAuth";
 import { getLoginUrl } from "../../const";
 import { Button } from "../../components/ui/button";
 import { Badge } from "../../components/ui/badge";
